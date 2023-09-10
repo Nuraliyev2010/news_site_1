@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="slider-wrap">
+      <div class="slider-item" style="background-image: url('img/hero_1.jpg');">
+        
+        <div class="container">
+          <div class="row slider-text align-items-center justify-content-center">
+            <div class="col-md-8 text-center col-sm-12 ">
+              <h1 data-aos="fade-up">Foody Recipes</h1>
+              <p class="mb-5" data-aos="fade-up" data-aos-delay="100">Handcrafted with love by <a href="https://free-template.co" target="_blank">Free-Template.co</a></p>
+              <p data-aos="fade-up" data-aos-delay="200"><a href="#" class="btn btn-white btn-outline-white">Get Started</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <!-- END slider -->
+    </div> 
+    
+
+    
+    <section class="section bg-light pt-0 bottom-slant-gray">
+
+      <div class="clearfix mb-5 pb-5">
+        <div class="container-fluid">
+          <div class="row" data-aos="fade">
+            <div class="col-md-12 text-center heading-wrap">
+              <h2>Our Recipes</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        
+        <div class="row no-gutters">
+          {% for i in menu %}
+          <div class="col-md-6">
+            <div class="sched d-block d-lg-flex">
+              <div class="bg-image order-2" style="background-image: url('{{ i.img.url }}');" data-aos="fade"></div>
+              <div class="text order-1">
+                <h3>{{ i.title }}</h3>
+                <p>{{ i.text }}</p>
+                <p class="text-primary h3">{{ i.price }}</p>
+                
+              </div>
+              
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+        
+
+      </div>
+    </section> <!-- .section -->
+{% endblock %}
